@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yxd-Kv-zhh">
+                                <rect key="frame" x="24" y="394" width="327" height="31"/>
+                                <connections>
+                                    <action selector="progressChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="b4I-j6-Qdr"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-6U-yHD" customClass="HFPieView">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="h4t-RW-BXX"/>
+                                    <constraint firstAttribute="height" constant="100" id="sab-Eh-oOr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heW-Lb-RwY" customClass="HFProgress">
+                                <rect key="frame" x="137" y="284" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na8-tP-oOZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Na8-tP-oOZ" firstAttribute="leading" secondItem="heW-Lb-RwY" secondAttribute="leading" id="Ez0-6W-NGf"/>
+                                    <constraint firstAttribute="width" constant="100" id="GZe-Vy-ORo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Na8-tP-oOZ" secondAttribute="trailing" id="JHI-Lt-gbF"/>
+                                    <constraint firstAttribute="height" constant="100" id="XIh-c4-ewq"/>
+                                    <constraint firstItem="Na8-tP-oOZ" firstAttribute="top" secondItem="heW-Lb-RwY" secondAttribute="top" id="YWK-Nc-Wbo"/>
+                                    <constraint firstAttribute="bottom" secondItem="Na8-tP-oOZ" secondAttribute="bottom" id="aAF-TL-KJY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1Q-Sz-jSN" customClass="HFHistogramView">
+                                <rect key="frame" x="124" y="20" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA3-7f-fgS" customClass="HFShapeView">
+                                <rect key="frame" x="16" y="497" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6yk-ry-8jb"/>
+                                    <constraint firstAttribute="height" constant="150" id="i0U-GH-GA3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.3294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ejQ-6U-yHD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5JX-Ca-Zdx"/>
+                            <constraint firstItem="heW-Lb-RwY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5KA-P8-W9h"/>
+                            <constraint firstItem="heW-Lb-RwY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AsC-hK-1Je"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yxd-Kv-zhh" secondAttribute="trailing" constant="10" id="Bfh-qU-teP"/>
+                            <constraint firstItem="yxd-Kv-zhh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="F3n-vQ-Xvz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GA3-7f-fgS" secondAttribute="bottom" constant="20" id="M7P-Ek-asZ"/>
+                            <constraint firstItem="GA3-7f-fgS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SNh-os-dCn"/>
+                            <constraint firstItem="yxd-Kv-zhh" firstAttribute="top" secondItem="heW-Lb-RwY" secondAttribute="bottom" constant="10" id="dkU-WI-S2R"/>
+                            <constraint firstItem="ejQ-6U-yHD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hjg-Ro-VfQ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="lab" destination="Na8-tP-oOZ" id="VUV-5I-39f"/>
+                        <outlet property="progressView" destination="heW-Lb-RwY" id="K7d-Vq-Dcr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="429.5"/>
+        </scene>
+    </scenes>
+</document>
